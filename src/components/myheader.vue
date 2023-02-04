@@ -95,13 +95,13 @@ header {
 }
 
 .btn.active {
-  box-shadow: inset 2px 2px 2px var(--btn-hover),
-    inset -2px -2px 2px var(--btn-left-top-shadow);
+  box-shadow: inset 2px 2px 6px var(--btn-hover),
+    inset -2px -2px 6px var(--btn-left-top-shadow);
 
 }
 
 .btn:active{
-  box-shadow: inset 2px 2px 2px var(--btn-hover),
-    inset -2px -2px 2px var(--btn-left-top-shadow);
+  box-shadow: inset 2px 2px 6px var(--btn-hover),
+    inset -2px -2px 6px var(--btn-left-top-shadow);
 }
 </style>

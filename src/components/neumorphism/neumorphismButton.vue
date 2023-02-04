@@ -26,6 +26,10 @@
         -20px -20px 60px var(--btn-left-top-shadow);
 
     transition: all 0.2s ease-in-out;
+
+
+    cursor: pointer;
+    user-select: none;
 }
 
 .btn-container:hover {
