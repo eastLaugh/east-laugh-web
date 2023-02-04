@@ -1,0 +1,24 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --color-background: #e0e0e0;
+  --btn-left-top-shadow:  #ffffff; 
+  --btn-right-bottom-shadow : #bebebe;
+  --btn-hover:#bebebe;
+  --btn-hover-darker:#7c7c7c;
+  --color-font:#444;
+  
+  --radius-border:50px;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+*,
+*::before,
+*::after {
+}
+
+
