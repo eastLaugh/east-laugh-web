@@ -1,6 +1,7 @@
 <script setup>
 import {ref,reactive} from 'vue'
 import axios from 'axios'
+import {login,loginByToken} from '@/api/users.js'
 const finish = ref(false)
 const user = reactive({
     email:'',
@@ -10,15 +11,14 @@ const user = reactive({
 const form=ref()
 function submit(){
     // form.value.submit()
-    axios.post('http://localhost:8080/users/login',user)
-    .then(function(response){
-        console.log(error);
-    });
+    
+    login(user);
+    // axios.post('http://localhost:8080/users/login',user)
+    // .then(function(response){
+    //     console.log(error);
+    // });
 }
 
-function login(){
-    
-}
 </script>
 
 <template>

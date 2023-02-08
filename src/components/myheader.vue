@@ -1,10 +1,10 @@
 <script>
 import { RouterLink } from 'vue-router'
-
+import {state} from '@/api/users'
 export default {
   data() {
     return {
-
+      state
     }
   },
   methods: {
@@ -12,14 +12,21 @@ export default {
   },
   props: {
     select: String
+  },
+  mounted(){
+
   }
+
 }
 </script>
 
 <template>
+  <p style="position: absolute;font-size: 3px;">{{ state }}</p>
   <header>
     <div @click="this.$router.push('/login')" class="user neum neum-hover neum-active">
-      <i class="fa-solid fa-user"></i>
+      
+      <div v-if="state.data" style="font-size: 20px;width: 100%;word-wrap: break-word;line-height:normal;">{{ state.data?.name }}</div>
+      <i v-else class="fa-solid fa-user"></i>
     </div>
     <div class="option">
       <div :class="{ active: this.select == 'main', btn: true }">
@@ -105,6 +112,7 @@ header{
   position: relative;
 }
 .user{
+  overflow: hidden;
   position: absolute;
   height: 70px;
   width: 70px;
