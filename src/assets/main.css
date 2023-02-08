@@ -7,12 +7,14 @@
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: var(--color-background);
 }
 
 #app {
   min-height: 100vh;
+  overflow: hidden;
+
 }
 
 
@@ -32,15 +34,41 @@ body {
   color: var(--color-font);
 }
 
-.neum-hover{
+.neum-hover {
   transition: 0.5s;
 }
 
-.neum-hover:hover{
+.neum-hover:hover {
   background-color: var(--btn-hover);
 }
 
-.neum-active:active{
+.neum-active:active {
   box-shadow: inset 2px 2px 6px var(--btn-hover),
     inset -2px -2px 6px var(--btn-left-top-shadow);
+}
+
+input.neum {
+  border: none;
+  border-radius: 8px;
+  background: #e0e0e0;
+  box-shadow: inset 6px 6px 12px #bebebe,
+    inset -6px -6px 12px #ffffff;
+
+  text-align: center;
+}
+
+
+/* 滚轮 */
+body::-webkit-scrollbar {
+  width: 0.2em;
+  /* background-color: #F5F5F5; */
+  /* position: absolute; */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
 }

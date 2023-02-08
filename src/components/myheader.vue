@@ -18,7 +18,7 @@ export default {
 
 <template>
   <header>
-    <div class="user neum neum-hover neum-active">
+    <div @click="this.$router.push('/login')" class="user neum neum-hover neum-active">
       <i class="fa-solid fa-user"></i>
     </div>
     <div class="option">
@@ -47,6 +47,8 @@ export default {
     -20px -20px 60px var(--btn-left-top-shadow);
 
   margin: 40px 20px;
+  /* margin-top: 0; */
+  /* padding-top: 40px; */
   display: flex;
   justify-content: center;
   align-items: center;
