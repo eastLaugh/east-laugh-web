@@ -21,7 +21,7 @@ export default {
 /* 卡片最外层 */
 .container {
     width: 100%;
-    min-width: 160px;
+    /* min-width: 160px; */
     min-height: 120px;
     margin-bottom: 40px;
 
@@ -34,7 +34,7 @@ export default {
 
     transition: all 0.2s;
 
-
+ 
     /* 实现飞入效果 */
     position: relative;
     animation: fly-in 0.5s ease-out forwards;

@@ -9,6 +9,8 @@
   
   --radius-border:50px;
 
+  --small-width:650px;
+
 }
 
 @media (prefers-color-scheme: dark) {

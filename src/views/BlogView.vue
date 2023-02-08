@@ -4,6 +4,7 @@ import neumorphismButton from '/src/components/neumorphism/neumorphismButton.vue
 </script>
 
 <template>
+  <myHeader select="blog"/>
   <div class="blog-view">
     <div class="main-container">
       <template v-for="( item,index) in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
@@ -45,5 +46,10 @@ import neumorphismButton from '/src/components/neumorphism/neumorphismButton.vue
   transform: translateX(100%);
 }
 
+@media (max-width: 650px) {
+  .float-container{
+    display: none;
+  }
+}
 
 </style>

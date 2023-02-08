@@ -4,48 +4,43 @@ import { RouterLink } from 'vue-router'
 export default {
   data() {
     return {
-      activeButton: null,
-      btns: [
-        { to: "/", content: "首页" },
-        { to: "/blog", content: "博客" },
-        { to: "/about", content: "关于" }
-      ]
-    }
-  },
-  methods: {
-    click(i) {
 
     }
   },
+  methods: {
+
+  },
+  props: {
+    select: String
+  }
 }
 </script>
 
 <template>
   <header>
-    <!-- {{ activeButton }} -->
-    <template v-for="(item, index) in btns">
-      <div class="btn" :class="{ active: activeButton === index }">
-        <RouterLink :to="item.to" @click="activeButton = index">{{ item.content }}
-        </RouterLink>
+    <div class="user neum neum-hover neum-active">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <div class="option">
+      <div :class="{ active: this.select == 'main', btn: true }">
+        <RouterLink to="/main">首页</RouterLink>
       </div>
-    </template>
-    <!-- <div class="btn">
-      <RouterLink to="/" @click="click(this)" ></RouterLink>
+      <div :class="{ active: this.select == 'blog', btn: true }">
+        <RouterLink to="/blog">博客</RouterLink>
+      </div>
+      <div :class="{ active: this.select == 'about', btn: true }">
+        <RouterLink to="/about">关于</RouterLink>
+      </div>
     </div>
-    <div class="btn">
-      <RouterLink to="/blog" @click="click(1)">博客</RouterLink>
-    </div>
-    <div class="btn">
-      <RouterLink to="/about" @click="click(2)">关于</RouterLink>
-    </div> -->
+
+    
 
   </header>
 </template>
 
 <style scoped>
-header {
+.option {
   height: 40px;
-
   border-radius: 50px;
   background: var(--color-background);
   box-shadow: 20px 20px 60px var(--btn-right-bottom-shadow),
@@ -56,7 +51,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-
 
 /*   [博客]   [关于]   */
 .btn {
@@ -77,11 +71,10 @@ header {
   transition: all 0.2s ease-in-out;
 }
 
-
 .btn:hover {
-  
 
-  background-color: #bebebe;
+
+  background-color: var(--btn-hover);
 }
 
 .btn a {
@@ -100,8 +93,40 @@ header {
 
 }
 
-.btn:active{
+.btn:active {
   box-shadow: inset 2px 2px 6px var(--btn-hover),
     inset -2px -2px 6px var(--btn-left-top-shadow);
+}
+</style>
+<style scoped>
+header{
+  position: relative;
+}
+.user{
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  top: -50%;
+  right: 10%;
+  /* background-color: black; */
+  border-radius: 20px;
+
+  text-align: center;
+  line-height: 70px;
+  font-size: 30px;
+}
+
+.user:hover{
+  font-size: 25px;
+}
+
+@media (max-width: 650px) {
+  .user{
+    height: 40px;
+    width: 40px;
+    top:0;
+    font-size: 20px;
+    line-height: 40px;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 @import './base.css';
 
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -11,15 +11,36 @@ body {
   background-color: var(--color-background);
 }
 
-#app{
+#app {
   min-height: 100vh;
 }
 
 
 @keyframes fly-in {
-  from {
-  }
+  from {}
+
   to {
-      transform: translateX(0);
+    transform: translateX(0);
   }
+}
+
+.neum {
+  border-radius: 50px;
+  background: var(--color-background);
+  box-shadow: 20px 20px 60px var(--btn-hover),
+    -20px -20px 60px var(--btn-left-top-shadow);
+  color: var(--color-font);
+}
+
+.neum-hover{
+  transition: 0.5s;
+}
+
+.neum-hover:hover{
+  background-color: var(--btn-hover);
+}
+
+.neum-active:active{
+  box-shadow: inset 2px 2px 6px var(--btn-hover),
+    inset -2px -2px 6px var(--btn-left-top-shadow);
 }

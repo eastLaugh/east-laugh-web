@@ -1,4 +1,5 @@
 <template>
+    <myHeader select="about"/>
 
 </template>
 
