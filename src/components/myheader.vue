@@ -14,7 +14,7 @@ export default {
     select: String
   },
   mounted(){
-
+    console.log(state.value)
   }
 
 }
@@ -25,7 +25,7 @@ export default {
   <header>
     <div @click="this.$router.push('/login')" class="user neum neum-hover neum-active">
       
-      <div v-if="state.data" style="font-size: 20px;width: 100%;word-wrap: break-word;line-height:normal;">{{ state.data?.name }}</div>
+      <div v-if="state" style="font-size: 20px;width: 100%;word-wrap: break-word;line-height:normal;">{{state.name }}</div>
       <i v-else class="fa-solid fa-user"></i>
     </div>
     <div class="option">

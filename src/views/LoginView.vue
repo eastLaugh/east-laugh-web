@@ -1,7 +1,7 @@
 <script setup>
 import {ref,reactive} from 'vue'
 import axios from 'axios'
-import {login,loginByToken} from '@/api/users.js'
+import {login,loginByToken,SendVerifyCode,register} from '../api/users'
 const finish = ref(false)
 const user = reactive({
     email:'',
@@ -19,6 +19,15 @@ function submit(){
     // });
 }
 
+function clickRegister(){
+    console.log(this)
+    var email=prompt("请键入邮箱(用以验证你的账户)")
+    SendVerifyCode(email,()=>{
+        var code=prompt('请检查邮箱，键入验证码(不能切换标签页，建议新开窗口)')
+        var pwd=prompt('OK ! 现在，请输入你的验证码。一些浏览器会自动生成密码，我也推荐你使用他们！因为EAST LAUGH可以看到你的密码。你的浏览器插件也可以查看密码。')
+        register(email,pwd,code)
+    });
+}
 </script>
 
 <template>
@@ -36,13 +45,15 @@ function submit(){
             <input type="password" class="neum" placeholder="密码" v-model="user.pwd"/>
         </form>
         <div class="tips neum" style="text-align: center;">
-            <p>
+            <neumorphismButton @click="clickRegister" >注册 </neumorphismButton>
+            <!-- <p>
                 等你输入完密码后
             </p>
             <p>
                 登录就会浮现
                 {{ user }}
-            </p>
+            </p> -->
+            <div class="div"></div>
         </div>
     </div>
 
@@ -52,11 +63,8 @@ function submit(){
 .container {
 
     /* position: fixed; */
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
+
+    /* pointer-events: none; */
 
     display: flex;
     justify-content: center;
@@ -65,7 +73,7 @@ function submit(){
 }
 
 .login-board {
-    pointer-events: all;
+    /* pointer-events: all; */
 
     /* z-index: 3; */
     height: 600px;
